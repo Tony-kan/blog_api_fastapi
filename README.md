@@ -1,6 +1,6 @@
 ## Blog Api
 
-#Tech Stack
-#Fastapi
-#Docker
-#Postgresql
+# Tech Stack
+# Fastapi
+# Docker
+# Postgresql
