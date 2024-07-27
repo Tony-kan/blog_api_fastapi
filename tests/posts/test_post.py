@@ -12,3 +12,4 @@ def test_user_posts_relationship():
     user = User(username = "user", email = "user@gmail.com", hashed_password = "password")
     post = Post(title = "My first post", content = "This is my 1st post")
     assert post.author == user
+    assert user.posts == [post]
