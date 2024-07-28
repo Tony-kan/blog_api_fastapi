@@ -8,11 +8,13 @@ class Settings(BaseSettings):
     DB_PASSWORD: str
     PGADMIN_EMAIL: str
     PGADMIN_PASSWORD: str
+    SECRET_KEY: str
+
     class Config:
-        env_file:str ='.env'
+        env_file: str = ".env"
         env_prefix = ""
-        
-       
-@lru_cache 
-def get_settings()->Settings:
+
+
+@lru_cache
+def get_settings() -> Settings:
     return Settings()
