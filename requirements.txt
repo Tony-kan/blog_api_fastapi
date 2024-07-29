@@ -7,3 +7,5 @@ pytest
 bcrypt
 pyjwt
 python-decouple
+httpx
+faker

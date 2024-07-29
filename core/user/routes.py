@@ -14,7 +14,7 @@ def signup(user_data: UserCreate, db: Session = Depends(get_db)):
     user.hash_password(user_data.password)
     db.add(user)
     db.commit()
-    return {"message": "User has been created"}
+    return {"message": "User has been Created"}
 
 
 @user_router.post("/login")
