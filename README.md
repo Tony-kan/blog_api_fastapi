@@ -16,11 +16,15 @@ Ensuring secure and scalable blog management
 
 ## <a name="features"> Features</a>
 
-        **User management
-        **Blog CRUD operations
-        **Comment management
-        **Password reset
-        **Refresh tokens
+    User Management
+
+    Blog CRUD Operations
+
+    Comment Management
+
+    Password Reset
+
+    Refresh Tokens
 
 ## <a name="endpoints"> API EndPoints</a>
 ### auth Endpoints
