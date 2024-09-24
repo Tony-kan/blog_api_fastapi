@@ -9,7 +9,7 @@ class Settings(BaseSettings):
     PGADMIN_EMAIL: str
     PGADMIN_PASSWORD: str
     SECRET_KEY: str
-
+    TOKEN_EXPIRATION_HOURS: int
     class Config:
         env_file: str = ".env"
         env_prefix = ""

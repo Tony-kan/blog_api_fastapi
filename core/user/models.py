@@ -29,6 +29,7 @@ class User(Base):
         )
 
     def generate_token(self):
-        expiration = datetime.utcnow() + timedelta(hours=24)
+        # expiration = datetime.utcnow() + timedelta(hours=24)
+        expiration = datetime.utcnow() + timedelta(hours=get_settings().TOKEN_EXPIRATION_HOURS)
         payload = {"sub": str(self.id), "exp": expiration}
         return jwt.encode(payload, f"{get_settings().SECRET_KEY}", algorithm="HS256")

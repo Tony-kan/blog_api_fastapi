@@ -21,6 +21,6 @@ def signup(user_data: UserCreate, db: Session = Depends(get_db)):
 def login(user_data: UserLogin, db: Session = Depends(get_db)):
     user = db.query(User).filter(User.username == user_data.username).first()
     if user is None or not user.verify_password(user_data.password):
-        raise HTTPException(status_code=401, default="Invalid Credentials")
+        raise HTTPException(status_code=401, detail="Invalid Credentials")
     token = user.generate_token()
     return Token(access_token=token, token_type="bearer")

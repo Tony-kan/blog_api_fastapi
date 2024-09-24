@@ -10,7 +10,7 @@ from .dependency import get_post_for_user
 post_router = APIRouter()
 
 
-@post_router.post('/post')
+@post_router.post('/')
 def create_post(post_data: CreateUpdatePost, db: Session = Depends(get_db), user: User  = Depends(get_current_user)):
     post = Post(title=post_data.title, content=post_data.content, author_id = user.id)
     db.add(post)
@@ -20,7 +20,7 @@ def create_post(post_data: CreateUpdatePost, db: Session = Depends(get_db), user
     }
 
 
-@post_router.get('/posts')
+@post_router.get('/')
 def list_post(db:Session= Depends(get_db), user: User=Depends(get_current_user)):
     posts = db.query(Post).all()
     return {
@@ -28,7 +28,7 @@ def list_post(db:Session= Depends(get_db), user: User=Depends(get_current_user))
     }
 
 
-@post_router.get('/post/{post_id}')
+@post_router.get('/{post_id}')
 def view_post(post_id:str, db:Session= Depends(get_db), user: User=Depends(get_current_user)):
     post = db.query(Post).filter(Post.id == post_id).first()
     if not post:
@@ -39,7 +39,7 @@ def view_post(post_id:str, db:Session= Depends(get_db), user: User=Depends(get_c
 
 
 
-@post_router.put('/post/{post_id}')
+@post_router.put('/{post_id}')
 def edit_post(post_id:str, post_data: CreateUpdatePost, post: Post = Depends(get_post_for_user), db:Session = Depends(get_db)):
     post.title = post_data.title
     post.content = post_data.content
@@ -49,7 +49,7 @@ def edit_post(post_id:str, post_data: CreateUpdatePost, post: Post = Depends(get
     }
 
 
-@post_router.delete('/post/{post_id}')
+@post_router.delete('/{post_id}')
 def delete_post(post: Post = Depends(get_post_for_user), db:Session = Depends(get_db)):
     db.delete(post)
     db.commit()
