@@ -1,10 +1,10 @@
 ## <a name="description">Project overview: Blog Api </a>
 
 A RESTful API using FastAPI, Postgres, Redis, and Docker, featuring:
-Custom JWT authentication
-User management
-Blog CRUD operations
-Comment management
+Custom JWT authentication ,
+User management ,
+Blog CRUD operations ,
+Comment management ,
 Ensuring secure and scalable blog management
 
 ## <a name="tech-stack"> Tech Stack *  </a>
